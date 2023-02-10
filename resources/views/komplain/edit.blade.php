@@ -39,11 +39,13 @@
                     <!-- <textarea name="jenis" class="form-control" id="" rows="3"></textarea> -->
                     <div class="btn-group" >
 						<div class="form-check">
-                        <input class="btn btn-default" type="radio" name="jenis" required="required" value="software" id="software">
+                        <input class="btn btn-default" type="radio" name="jenis" required="required" value="software" id="software"
+                        {{ ($komplain->jenis=="software")? "checked" : "" }}>
 						<label class="btn btn-default" for="software">Software</label>
                         </div>
                         <div class="form-check">
-                        <input class="btn btn-default" type="radio" name="jenis" required="required" value="hardware" id="hardware">
+                        <input class="btn btn-default" type="radio" name="jenis" required="required" value="hardware" id="hardware"
+                        {{ ($komplain->jenis=="hardware")? "checked" : "" }}>
 						<label class="btn btn-default" for="hardware">Hardware</label>
                         </div>
                     </div>
@@ -62,7 +64,7 @@
                     </span>
                     @enderror
                 </div>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label for="" class="form-label">Komplain Ditangani</label>
                     <input name="tgl_ditangani" type="datetime" class="form-control" id="" rows="3" value="{{ old('tgl_ditangani', $komplain->tgl_ditangani) }}">
                     @error('tgl_ditangani')
@@ -97,8 +99,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">Tingkat Kesulitan</label>
-                    <!-- <textarea name="level" class="form-control" id="" rows="3"></textarea> -->
-                    <div class="btn-group" >
+                    <textarea name="level" class="form-control" id="" rows="3"></textarea> -->
+                    <!-- <div class="btn-group" >
 						<div class="form-check">
                         <input class="btn btn-default" type="radio" name="level" required="required" value="1" id="mudah">
 						<label class="btn btn-default" for="mudah">Mudah</label>
@@ -128,9 +130,9 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">Berhasil/Tidak</label>
+                    <label for="" class="form-label">Berhasil/Tidak</label> -->
                     <!-- <textarea name="capaian" class="form-control" id="" rows="3"></textarea> -->
-                    <div class="btn-group" >
+                    <!-- <div class="btn-group" >
 						<div class="form-check">
                         <input class="btn btn-default" type="radio" name="capaian" required="required" value="berhasil" id="berhasil">
 						<label class="btn btn-default" for="berhasil">Berhasil</label>
@@ -154,7 +156,7 @@
                         {{$message}}
                     </span>
                     @enderror
-                </div>
+                </div> -->
                     <!-- <textarea name="petugas" class="form-control" id="" rows="3"></textarea> -->
                     <!-- <div class="btn-group" >
                         <input class="btn btn-default" type="checkbox" name="petugas"  value="rizky" id="rizky">

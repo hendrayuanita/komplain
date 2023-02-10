@@ -86,14 +86,14 @@ class KomplainController extends Controller
             'tgl_masuk' => $request->tgl_masuk,
             'unit' => $request->unit,
             'jenis' => $request->jenis,
-            'isi' => $request->isi,
-            'tgl_ditangani' => $request->tgl_ditangani,
-            'respon' => $request->respon,
-            'penyelesaian' => $request->penyelesaian,
-            'level' => $request->level,
-            'tgl_selesai' => $request->tgl_selesai,
-            'capaian' => $request->capaian,
-            'petugas' => $request->petugas
+            'isi' => $request->isi
+            // 'tgl_ditangani' => $request->tgl_ditangani,
+            // 'respon' => $request->respon,
+            // 'penyelesaian' => $request->penyelesaian,
+            // 'level' => $request->level,
+            // 'tgl_selesai' => $request->tgl_selesai,
+            // 'capaian' => $request->capaian,
+            // 'petugas' => $request->petugas
         ]);
         return redirect('/komplains'); 
     }
