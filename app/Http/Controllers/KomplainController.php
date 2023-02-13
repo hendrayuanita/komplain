@@ -6,6 +6,7 @@ use App\Http\Requests\KomplainRequest;
 use App\Http\Requests\ValidasiRequest;
 use App\Models\Komplain;
 use App\Models\Valid;
+// use App\Models\Rekap;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facedes\DB;
 
@@ -22,9 +23,6 @@ class KomplainController extends Controller
         if($request->search)
         {
             $komplains = Komplain::withTrashed()->where('is_active', true)->get()->paginate(5);;
-            // $komplains = Komplain::where('unit', 'LIKE', "%$request->search%")
-            // ->paginate(5);
-            
 
             return view('komplain.index', [
                 'data' =>$komplains
@@ -87,13 +85,7 @@ class KomplainController extends Controller
             'unit' => $request->unit,
             'jenis' => $request->jenis,
             'isi' => $request->isi
-            // 'tgl_ditangani' => $request->tgl_ditangani,
-            // 'respon' => $request->respon,
-            // 'penyelesaian' => $request->penyelesaian,
-            // 'level' => $request->level,
-            // 'tgl_selesai' => $request->tgl_selesai,
-            // 'capaian' => $request->capaian,
-            // 'petugas' => $request->petugas
+            
         ]);
         return redirect('/komplains'); 
     }
@@ -117,11 +109,6 @@ class KomplainController extends Controller
 
     public function store_valid(ValidasiRequest $request)
     {
-        // $valid = new Valid();
-        // $valid->keterangan = $request->input('keterangan');
-        // $valid->id_komp = $request->input('id_komp');
-        // $valid->save();
-        // return redirect()->route('valids.index');
 
         $valid = new Valid();
         $valid->id_komp = $request->input('id_komp');
@@ -139,4 +126,14 @@ class KomplainController extends Controller
         return redirect('/komplains');
     
     }
+
+    public function rekap()
+    {
+        
+        $komplain = Valid::getData();
+      
+        return view('komplain.rekap', compact('komplain'));
+        
+    }
 }
+      

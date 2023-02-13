@@ -15,17 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index' ]);
+// Route::get('/', [HomeController::class, 'index' ]);
 Route::get('/komplains', [KomplainController::class, 'index']);
+Route::get('/komplains/rekap', [KomplainController::class, 'rekap']);
 Route::get('/komplains/create', [KomplainController::class, 'create']);
-// Route::get('/komplains/valid', [KomplainController::class, 'valid']);
 Route::get('/komplains/{id}', [KomplainController::class, 'show']);
 Route::post('/komplains', [KomplainController::class, 'store']);
-
-// Route::get('valids/create/{id}', 'ValidController@create');
-// Route::post('valids/store', 'ValidController@store');
 Route::get('/komplains/valid/{id}', [KomplainController::class, 'valid']);
 Route::post('/komplains/store_valid', [KomplainController::class, 'store_valid']);
 Route::get('/komplains/{id}/edit', [KomplainController::class, 'edit']);
 Route::patch('/komplains/{id}', [KomplainController::class, 'update']);
 Route::delete('/komplains/{id}', [KomplainController::class, 'destroy']);
+
+

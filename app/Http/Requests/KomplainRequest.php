@@ -28,13 +28,7 @@ class KomplainRequest extends FormRequest
             'unit' => ['required'],
             'jenis' => ['required'],
             'isi' => ['required']
-            // 'tgl_ditangani' => ['required'],
-            // 'respon' => ['required'],
-            // 'penyelesaian' => ['required'],
-            // 'level' => ['required'],
-            // 'tgl_selesai' => ['required'],
-            // 'capaian' => ['required'],
-            // 'petugas' => ['required']
+           
             ];
     }
 

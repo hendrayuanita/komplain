@@ -10,7 +10,6 @@ class Komplain extends Model
 {
     use SoftDeletes;
     use HasFactory;
-    // protected $table = 'valids';
    
     protected $guarded = [];
 }
