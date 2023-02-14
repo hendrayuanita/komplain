@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', [HomeController::class, 'index' ]);
+Route::get('/', [HomeController::class, 'index' ]);
 Route::get('/komplains', [KomplainController::class, 'index']);
 Route::get('/komplains/rekap', [KomplainController::class, 'rekap']);
 Route::get('/komplains/create', [KomplainController::class, 'create']);

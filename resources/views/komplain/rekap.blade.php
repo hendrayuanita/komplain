@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('main')
-<table class="table">
+<div class="card-box table-responsive">
+<table id="table-komplain" class="table table-striped table-bordered">
     <thead>
         <tr>
             <th scope="col">Tanggal Masuk</th>
@@ -9,7 +10,7 @@
             <th scope="col">Isi Komplain</th>
             <th scope="col">Tanggal Ditangani</th>
             <th scope="col">Respon</th>
-            <th scope="col">Solusi</th>
+            <th scope="col">Penyelesaian</th>
             <th scope="col">Tingkat Kesulitan</th>
             <th scope="col">Tanggal Selesai</th>
             <th scope="col">Berhasil/Tidak</th>
@@ -34,4 +35,15 @@
         @endforeach
     </tbody>
 </table>
+</div>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+<script>
+$(document).ready(function() {
+    $('#table-komplain').DataTable();
+});
+</script>
+
 @endsection

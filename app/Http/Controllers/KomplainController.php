@@ -109,6 +109,12 @@ class KomplainController extends Controller
 
     public function store_valid(ValidasiRequest $request)
     {
+        $petugas = $request->input('petugas');
+        if (!empty($petugas)) {
+        $petugas = implode(',', $petugas);
+        } else {
+            $petugas = '';
+        }
 
         $valid = new Valid();
         $valid->id_komp = $request->input('id_komp');
@@ -118,7 +124,8 @@ class KomplainController extends Controller
         $valid->level = $request->input('level');
         $valid->tgl_selesai = $request->input('tgl_selesai');
         $valid->capaian = $request->input('capaian');
-        $valid->petugas = $request->input('petugas');
+        // $valid->petugas = $request->input('petugas');
+        $valid->petugas = $petugas;
         $valid->save();
 
         $complain = Komplain::find($valid->id_komp);

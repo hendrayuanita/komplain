@@ -46,7 +46,6 @@
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">Tingkat Kesulitan</label>
-                    <!-- <textarea name="level" class="form-control" id="" rows="3"></textarea> -->
                     <div class="btn-group" >
 						<div class="form-check">
                         <input class="btn btn-default" type="radio" name="level"  value="1" id="mudah">
@@ -78,7 +77,6 @@
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">Berhasil/Tidak</label>
-                    <!-- <textarea name="capaian" class="form-control" id="" rows="3"></textarea> -->
                     <div class="btn-group" >
 						<div class="form-check">
                         <input class="btn btn-default" type="radio" name="capaian"  value="berhasil" id="berhasil">
@@ -97,7 +95,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">Petugas</label>
-                    <input name="petugas" class="form-control" id="" rows="3">
+                    <!-- <input name="petugas" class="form-control" id="" rows="3"> -->
                     @error('petugas')
                     <span class="text-danger">
                         {{$message}}
@@ -105,17 +103,17 @@
                     @enderror
                 </div>
                     <!-- <textarea name="petugas" class="form-control" id="" rows="3"></textarea> -->
-                    <!-- <div class="btn-group" >
-                        <input class="btn btn-default" type="checkbox" name="petugas"  value="rizky" id="rizky">
+                    <div class="btn-group" >
+                        <input class="btn btn-default" type="checkbox" name="petugas[]"  value="rizky" id="rizky">
 						<label class="btn btn-default" for="rizky">Rizky</label>
                        
-                        <input class="btn btn-default" type="checkbox" name="petugas"  value="magrid" id="magrid">
+                        <input class="btn btn-default" type="checkbox" name="petugas[]"  value="magrid" id="magrid">
 						<label class="btn btn-default" for="magrid">Magrid</label>
     
-                        <input class="btn btn-default" type="checkbox" name="petugas"  value="adit" id="adit">
+                        <input class="btn btn-default" type="checkbox" name="petugas[]"  value="adit" id="adit">
 						<label class="btn btn-default" for="adit">Adit</label>
                        
-                        <input class="btn btn-default" type="checkbox" name="petugas"  value="yuan" id="yuan">
+                        <input class="btn btn-default" type="checkbox" name="petugas[]"  value="yuan" id="yuan">
 						<label class="btn btn-default" for="yuan">Yuan</label>
                         
                     </div>
@@ -124,10 +122,11 @@
                         {{$message}}
                     </span>
                     @enderror
-                </div> -->
+                </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </div>
 </div>
+
 @endsection
