@@ -26,10 +26,12 @@ class ValidasiRequest extends FormRequest
         return [
             
                 'tgl_ditangani' => ['required'],
+                'jam_ditangani' => ['required'],
                 'respon' => ['required'],
                 'penyelesaian' => ['required'],
                 'level' => ['required'],
                 'tgl_selesai' => ['required'],
+                'jam_selesai' => ['required'],
                 'capaian' => ['required'],
                 'petugas' => ['required']
                 

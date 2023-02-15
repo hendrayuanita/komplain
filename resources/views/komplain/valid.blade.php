@@ -13,8 +13,14 @@
                  <input type="hidden" name="id_komp" value="{{ $komplain->id }}">
                 <div class="mb-3">
                     <label for="" class="form-label">Komplain Ditangani</label>
-                    <input name="tgl_ditangani" type="date" class="form-control" id="" rows="3">
+                    <input name="tgl_ditangani" type="date" class="form-control">
                     @error('tgl_ditangani')
+                    <span class="text-danger">
+                        {{$message}}
+                    </span>
+                    @enderror
+                    <input name="jam_ditangani" type="time" class="form-control">
+                    @error('jam_ditangani')
                     <span class="text-danger">
                         {{$message}}
                     </span>
@@ -48,15 +54,15 @@
                     <label for="" class="form-label">Tingkat Kesulitan</label>
                     <div class="btn-group" >
 						<div class="form-check">
-                        <input class="btn btn-default" type="radio" name="level"  value="1" id="mudah">
+                        <input class="btn btn-default" type="radio" name="level"  value="mudah" id="mudah">
 						<label class="btn btn-default" for="mudah">Mudah</label>
                         </div>
                         <div class="form-check">
-                        <input class="btn btn-default" type="radio" name="level" value="2" id="sedang">
+                        <input class="btn btn-default" type="radio" name="level" value="sedang" id="sedang">
 						<label class="btn btn-default" for="sedang">Sedang</label>
                         </div>
                         <div class="form-check">
-                        <input class="btn btn-default" type="radio" name="level"  value="3" id="sulit">
+                        <input class="btn btn-default" type="radio" name="level"  value="sulit" id="sulit">
 						<label class="btn btn-default" for="sulit">Sulit</label>
                         </div>
                     </div>
@@ -68,8 +74,14 @@
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">Komplain Selesai</label>
-                    <input name="tgl_selesai" type="date" class="form-control" id="" rows="3">
+                    <input name="tgl_selesai" type="date" class="form-control">
                     @error('tgl_selesai')
+                    <span class="text-danger">
+                        {{$message}}
+                    </span>
+                    @enderror
+                    <input name="jam_selesai" type="time" class="form-control">
+                    @error('jam_selesai')
                     <span class="text-danger">
                         {{$message}}
                     </span>

@@ -18,6 +18,12 @@
                         {{$message}}
                     </span>
                     @enderror
+                    <input name="jam_masuk" type="time" class="form-control">
+                    @error('jam_masuk')
+                    <span class="text-danger">
+                        {{$message}}
+                    </span>
+                    @enderror
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">Unit</label>
@@ -33,11 +39,11 @@
                     <!-- <textarea name="jenis" class="form-control" id="" rows="3"></textarea> -->
                     <div class="btn-group" >
 						<div class="form-check">
-                        <input class="btn btn-default" type="radio" name="jenis" value="software" id="software">
+                        <input class="btn btn-default" type="radio" name="jenis" value="Software" id="software">
 						<label class="btn btn-default" for="software">Software</label>
                         </div>
                         <div class="form-check">
-                        <input class="btn btn-default" type="radio" name="jenis"  value="hardware" id="hardware">
+                        <input class="btn btn-default" type="radio" name="jenis"  value="Hardware" id="hardware">
 						<label class="btn btn-default" for="hardware">Hardware</label>
                         </div>
                     </div>

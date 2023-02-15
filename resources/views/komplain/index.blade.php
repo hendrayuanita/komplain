@@ -4,7 +4,7 @@
 <div class="border rounded my-5 mx-auto d-flex flex-column align-items-stretch bg-white" style="width: 380px;">
         <div class="d-flex justify-content-between flex-shrink-0 p-3 link-dark  border-bottom">
             <span class="fs-5 fw-semibold">Komplain Lists : {{$data->total() }}</span>
-            <a href="{{ url('/komplains/create') }}" class="btn btn-sm btn-primary">add</a>
+            <a href="{{ url('/komplains/create') }}" class="btn btn-sm btn-primary">ADD</a>
         </div>
         @foreach($data as $item)
         <div class="list-group list-group-flush border-bottom scrollarea">
@@ -19,9 +19,9 @@
                 <div class="group-action">
                     <form action="{{ url("komplains/$item->id") }}" method="POST">
                     @csrf @method('DELETE')
-                    <a href="{{ url("/komplains/$item->id/edit") }}" class="badge bg-secondary text-white">edit</a>
-                    <a href="{{ url("komplains/valid/$item->id") }}" class="badge bg-info text-white">validasi</a>
-                    <button type="submit" onclick="return confirm('Are you sure you want to delete this item?')" class="badge bg-danger text-white">delete</button>
+                    <a href="{{ url("/komplains/$item->id/edit") }}" class="badge bg-secondary text-white">EDIT</a>
+                    <a href="{{ url("komplains/valid/$item->id") }}" class="badge bg-info text-white">VALIDASI</a>
+                    <button type="submit" onclick="return confirm('Are you sure you want to delete this item?')" class="badge bg-danger text-white">DELETE</button>
                 </form>
                 </div>
             </div>

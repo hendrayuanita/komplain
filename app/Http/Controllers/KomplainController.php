@@ -45,6 +45,7 @@ class KomplainController extends Controller
     {
         $request->validate([
         'tgl_masuk' => ['required'],
+        'jam_masuk' => 'required',
         'unit' => ['required'],
         'jenis' => ['required'],
         'isi' => ['required']
@@ -52,13 +53,14 @@ class KomplainController extends Controller
         ]);
         Komplain::create([
         'tgl_masuk' => $request->tgl_masuk,
+        'jam_masuk' => $request->jam_masuk,
         'unit' => $request->unit,
         'jenis' => $request->jenis,
         'isi' => $request->isi
         
     ]);
     
-    return redirect('/komplains');
+    return redirect('/komplains')->with('success', 'Komplain berhasil ditambahkan!');
     
     }
 
@@ -82,6 +84,7 @@ class KomplainController extends Controller
     
         $komplain->update([
             'tgl_masuk' => $request->tgl_masuk,
+            'jam_masuk' => $request->jam_masuk,
             'unit' => $request->unit,
             'jenis' => $request->jenis,
             'isi' => $request->isi
@@ -119,10 +122,12 @@ class KomplainController extends Controller
         $valid = new Valid();
         $valid->id_komp = $request->input('id_komp');
         $valid->tgl_ditangani = $request->input('tgl_ditangani');
+        $valid->jam_ditangani = $request->input('jam_ditangani');
         $valid->respon = $request->input('respon');
         $valid->penyelesaian = $request->input('penyelesaian');
         $valid->level = $request->input('level');
         $valid->tgl_selesai = $request->input('tgl_selesai');
+        $valid->jam_selesai = $request->input('jam_selesai');
         $valid->capaian = $request->input('capaian');
         // $valid->petugas = $request->input('petugas');
         $valid->petugas = $petugas;
