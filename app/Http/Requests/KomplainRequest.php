@@ -25,6 +25,7 @@ class KomplainRequest extends FormRequest
     {
         return [
             'tgl_masuk' => ['required'],
+            'jam_masuk' => ['required'],
             'unit' => ['required'],
             'jenis' => ['required'],
             'isi' => ['required']
